@@ -6,4 +6,4 @@ def rename_all_file_with_prefix(source_dir: str, prefix: str):
         os.rename(f'{source_dir}/{filename}', f"{source_dir}/{prefix}_{filename}")
 
 
-rename_all_file_with_prefix('handwriting/Linh/data', "Linh");
+rename_all_file_with_prefix('team_handwriting/B.Thien/data/503-618', "B_Thien");
