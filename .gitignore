@@ -1,3 +1,6 @@
 venv
 .idea
 /data
+data.zip
+val.txt
+train.txt
