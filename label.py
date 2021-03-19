@@ -16,7 +16,7 @@ def rename_all_file_with_prefix(source_dir: str, prefix: str):
         os.rename(f'{source_dir}/{filename}', f"{source_dir}/{prefix}_{filename}")
 
 
-# rename_all_file_with_prefix('team_handwriting/Duy/fixed_label/Binh1-29', "Binh");
+# rename_all_file_with_prefix('team_handwriting/Duy/data/451-500', "Duy");
 
 def copy_team():
     path = "team_handwriting"
@@ -37,8 +37,6 @@ def copy_team():
                                  f"data/{filename_without_extension}.txt")
 
 
-# copy_team()
-
 def copy_intenet():
     path = "internet_handwriting"
     data_path = f"{path}/data"
@@ -54,3 +52,7 @@ def copy_intenet():
                     copyfile(f"{data_path}/{dir}/{filename}", f"data/{filename}")
                     copyfile(f"{label_path}/{dir}/{filename_without_extension}.txt",
                              f"data/{filename_without_extension}.txt")
+
+
+copy_team()
+copy_intenet()
