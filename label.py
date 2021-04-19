@@ -54,5 +54,25 @@ def copy_intenet():
                              f"data/{filename_without_extension}.txt")
 
 
+def copy():
+    path = "admin"
+    dirs = next(os.walk(f"{path}"))[1]
+    for dir in dirs:
+        data_path = f"{path}/{dir}/data"
+        label_path = f"{path}/{dir}/label"
+        dir_datas = next(os.walk(f"{data_path}"))[1]
+        for dir_data in dir_datas:
+            for filename in os.listdir(f"{data_path}/{dir_data}"):
+                if filename.endswith(".jpg") or filename.endswith(".jpeg") or filename.endswith(
+                        ".png") or filename.endswith(".PNG") or filename.endswith(".JPG") or filename.endswith(".JPEG"):
+                    filename_without_extension = os.path.splitext(filename)[0]
+                    if os.path.exists(f"{label_path}/{dir_data}/{filename_without_extension}.txt"):
+                        print(filename_without_extension)
+                        copyfile(f"{data_path}/{dir_data}/{filename}", f"data/{filename}")
+                        copyfile(f"{label_path}/{dir_data}/{filename_without_extension}.txt",
+                                 f"data/{filename_without_extension}.txt")
+
+
+copy()
 copy_team()
 copy_intenet()
